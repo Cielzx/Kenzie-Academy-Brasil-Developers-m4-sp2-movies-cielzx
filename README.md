@@ -11,7 +11,7 @@
 
 A tabela deve seguir as seguintes especificações:
 
-![Screenshot_533](https://user-images.githubusercontent.com/109680848/216778790-28cf7db4-7c11-43ff-a948-8306ab88e0ca.png)
+![Screenshot_534](https://user-images.githubusercontent.com/109680848/216779021-f3bb3f43-1dea-4b9a-a59a-af6bbb46924d.png)
 
 * **Nome da tabela**: movies.
 * **Colunas da tabela**:
