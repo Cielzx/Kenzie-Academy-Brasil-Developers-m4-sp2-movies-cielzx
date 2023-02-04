@@ -11,6 +11,8 @@
 
 A tabela deve seguir as seguintes especificações:
 
+![Screenshot_533](https://user-images.githubusercontent.com/109680848/216778790-28cf7db4-7c11-43ff-a948-8306ab88e0ca.png)
+
 * **Nome da tabela**: movies.
 * **Colunas da tabela**:
   * **id**: inteiro, auto incrementável e chave primária.
