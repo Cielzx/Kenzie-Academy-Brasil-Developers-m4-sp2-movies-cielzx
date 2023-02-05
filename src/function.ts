@@ -61,7 +61,8 @@ const createMoviesFormat = async (
 };
 
 const listMovies = async (req: Request, res: Response): Promise<Response> => {
-  let perPage: any = Number(req.query.perPage);
+  let perPage: any =
+    req.query.perPage != "string" ? 5 : Number(req.query.perPage);
   let page: any = req.query.page != "string" ? 1 : Number(req.query.page);
   const sort: string = String(req.query.sort);
   let order: string = String(req.query.order);
