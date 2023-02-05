@@ -12,11 +12,6 @@ import {
 const createMovies = async (req: Request, res: Response): Promise<Response> => {
   const movieDataRequest: iMoviesRequest = req.body;
 
-  // const movieData = {
-  //     id:
-  //     ...movieDataRequest
-  // }
-
   const queryStr: string = `
   INSERT INTO
     movies_table(name,description,duration,price)
