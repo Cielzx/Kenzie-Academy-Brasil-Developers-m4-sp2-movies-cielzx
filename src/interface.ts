@@ -14,9 +14,21 @@ interface iPagination {
   data: iMoviesRequest[];
 }
 
+interface RequestQuery {
+  page: number;
+  perPage: number;
+  id: number;
+}
+
 interface idMovies extends iMoviesRequest {
   id: number;
 }
 
 type movieQueryResult = QueryResult<idMovies>;
-export { iMoviesRequest, idMovies, movieQueryResult, iPagination };
+export {
+  iMoviesRequest,
+  idMovies,
+  movieQueryResult,
+  iPagination,
+  RequestQuery,
+};

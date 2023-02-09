@@ -7,6 +7,7 @@ import {
   iMoviesRequest,
   iPagination,
   movieQueryResult,
+  RequestQuery,
 } from "./interface";
 
 const createMovies = async (req: Request, res: Response): Promise<Response> => {
@@ -56,23 +57,18 @@ const createMoviesFormat = async (
 };
 
 const listMovies = async (req: Request, res: Response): Promise<Response> => {
-  let perPage: any =
-    req.query.perPage != "string" ? 5 : Number(req.query.perPage);
-  let page: any = req.query.page != "string" ? 1 : Number(req.query.page);
-  const sort: string = String(req.query.sort);
+  let perPage: any = req.pagination.perPage;
+
+  let page: any = req.pagination.page;
+
+  let sort: string = String(req.query.sort);
   let order: string = String(req.query.order);
 
-  if (perPage < 1 || perPage > 5 || typeof perPage != "number") {
-    perPage = 5;
-  }
-
-  if (page <= 0 || typeof page != "number") {
-    page = 1;
+  if (req.query.sort === undefined) {
+    sort = "price";
   }
 
   const object = {
-    page: page,
-    perPage: perPage,
     sort: sort,
   };
 
@@ -89,6 +85,7 @@ const listMovies = async (req: Request, res: Response): Promise<Response> => {
       LIMIT $1 OFFSET $2;
       
     `,
+          Object.keys(object),
           Object.values(object)
         )
       : format(

@@ -12,10 +12,10 @@ import { paginateFunction, verifyMovies, verifyName } from "./middleware";
 const app: Application = express();
 app.use(express.json());
 
-app.post("/movie_data", verifyName, createMoviesFormat);
-app.get("/movie_data", paginateFunction, listMovies);
-app.patch("/movie_data/:id", verifyMovies, verifyName, updateMovie);
-app.delete("/movie_data/:id", verifyMovies, deleteMovie);
+app.post("/movies", verifyName, createMoviesFormat);
+app.get("/movies", paginateFunction, listMovies);
+app.patch("/movies/:id", verifyMovies, verifyName, updateMovie);
+app.delete("/movies/:id", verifyMovies, deleteMovie);
 
 app.listen(3000, async () => {
   await startDat();
